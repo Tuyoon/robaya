@@ -88,6 +88,16 @@ class LanguageManager {
       } else {
         console.warn('⚠️ No translation found for key:', key);
       }
+      
+      // Handle data-i18n-title attribute
+      const titleKey = element.getAttribute('data-i18n-title');
+      if (titleKey) {
+        const titleTranslation = this.getTranslation(titleKey);
+        if (titleTranslation) {
+          element.title = titleTranslation;
+          console.log('✅ Updated title for element:', titleKey, '→', titleTranslation);
+        }
+      }
     });
   }
 
