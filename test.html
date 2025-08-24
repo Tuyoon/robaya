@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Тест локализации - Robaya</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+    .demo-container { max-width: 800px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    .lang-switch { margin-bottom: 20px; }
+    .lang-switch a { margin-right: 10px; padding: 5px 10px; text-decoration: none; background: #f0f0f0; }
+    .lang-switch a:hover { background: #e0e0e0; }
+    .current-lang { font-weight: bold; color: #007bff; }
+    .test-info { background: #f8f9fa; padding: 10px; margin: 10px 0; border-radius: 5px; }
+    .game-card { background: #f8f9fa; padding: 15px; margin: 15px 0; border-radius: 8px; border: 1px solid #dee2e6; }
+  </style>
+</head>
+<body>
+  <div class="demo-container">
+    <h1>🎯 Тест системы локализации - Robaya</h1>
+    
+    <div class="test-info">
+      <strong>✨ Новинка!</strong> Теперь у вас только один набор HTML файлов, который автоматически работает с разными языками!
+    </div>
+    
+    <div class="lang-switch">
+      <a href="#" data-lang="en">🇺🇸 English</a>
+      <a href="#" data-lang="ru">🇷🇺 Русский</a>
+    </div>
+    
+    <div class="game-card">
+      <h2 data-i18n="mainTitle">Welcome to Robaya</h2>
+      <p data-i18n="mainSubtitle">Discover amazing mobile games and applications</p>
+      
+      <h3 data-i18n="gamesTitle">Our Games & Apps</h3>
+      <p data-i18n="gamesSubtitle">Choose from our collection of entertaining and useful applications</p>
+      
+      <h4 data-i18n="sudokuTitle">Sudoku</h4>
+      <p data-i18n="sudokuDescription">Brain training puzzle game with multiple difficulty levels</p>
+      <p data-i18n="sudokuFeatures">Features: Multiple levels, Daily challenges, Progress tracking</p>
+    </div>
+    
+    <div class="game-card">
+      <h3>🔧 Тестирование системы</h3>
+      <div class="test-info">
+        <strong>Текущий язык:</strong> <span id="currentLang">Определяется...</span><br>
+        <strong>Поддерживаемые языки:</strong> <span id="supportedLangs">Загружается...</span>
+      </div>
+      
+      <div class="test-buttons">
+        <button onclick="testSetLanguage('en')">🇺🇸 Установить английский</button>
+        <button onclick="testSetLanguage('ru')">🇷🇺 Установить русский</button>
+        <button onclick="testGetCurrentLanguage()">📊 Получить текущий язык</button>
+        <button onclick="testGetTranslation('mainTitle')">🔍 Получить перевод 'mainTitle'</button>
+        <button onclick="testGetTranslation('sudokuTitle')">🔍 Получить перевод 'sudokuTitle'</button>
+      </div>
+      
+      <h4>Результаты тестов:</h4>
+      <div class="test-results" id="testResults">Нажмите кнопки для тестирования...</div>
+    </div>
+    
+    <div class="game-card">
+      <h3>🎨 Особенности новой системы</h3>
+      <ul>
+        <li><strong>Единые файлы:</strong> Только один index.html, privacy.html, terms.html</li>
+        <li><strong>Автоматическое определение:</strong> Система сама выбирает язык</li>
+        <li><strong>Мгновенное переключение:</strong> Без перезагрузки страницы</li>
+        <li><strong>Визуальные индикаторы:</strong> Текущий язык выделяется</li>
+        <li><strong>Легкое расширение:</strong> Добавление языков за минуты</li>
+      </ul>
+    </div>
+    
+    <div class="game-card">
+      <h3>📱 Навигация по сайту</h3>
+      <p>Все страницы автоматически работают с выбранным языком:</p>
+      <div class="test-buttons">
+        <a href="index.html" style="text-decoration: none;"><button>🏠 Главная страница</button></a>
+        <a href="privacy.html" style="text-decoration: none;"><button>🔒 Privacy Policy</button></a>
+        <a href="terms.html" style="text-decoration: none;"><button>📋 Terms of Use</button></a>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <a href="index.html">🏠 Главная</a>
+      <a href="privacy.html">🔒 Privacy</a>
+      <a href="terms.html">📋 Terms</a>
+      <br><br>
+      <small>Демонстрация новой системы локализации Robaya Site</small>
+    </div>
+  </div>
+
+  <script src="js/translations.js"></script>
+  <script src="js/lang.js"></script>
+  <script>
+    // Тестовые функции
+    function testSetLanguage(lang) {
+      if (window.langManager) {
+        window.langManager.setLanguage(lang);
+        updateDemoInfo();
+        addTestResult(`✅ Язык установлен: ${lang}`);
+      } else {
+        addTestResult('❌ Ошибка: langManager не инициализирован');
+      }
+    }
+    
+    function testGetCurrentLanguage() {
+      if (window.langManager) {
+        const lang = window.langManager.getCurrentLanguage();
+        addTestResult(`📊 Текущий язык: ${lang}`);
+      } else {
+        addTestResult('❌ Ошибка: langManager не инициализирован');
+      }
+    }
+    
+    function testGetTranslation(key) {
+      if (window.langManager) {
+        const translation = window.langManager.getTranslation(key);
+        if (translation) {
+          addTestResult(`🔍 Перевод для '${key}': ${translation}`);
+        } else {
+          addTestResult(`❌ Перевод для '${key}' не найден`);
+        }
+      } else {
+        addTestResult('❌ Ошибка: langManager не инициализирован');
+      }
+    }
+    
+    function updateDemoInfo() {
+      if (window.langManager) {
+        document.getElementById('currentLang').textContent = window.langManager.getCurrentLanguage();
+        document.getElementById('supportedLangs').textContent = window.langManager.getSupportedLanguages().join(', ');
+        
+        // Обновляем активный переключатель
+        document.querySelectorAll('.lang-switch a').forEach(switcher => {
+          const lang = switcher.getAttribute('data-lang');
+          if (lang === window.langManager.getCurrentLanguage()) {
+            switcher.classList.add('active');
+          } else {
+            switcher.classList.remove('active');
+          }
+        });
+      }
+    }
+    
+    function addTestResult(message) {
+      const results = document.getElementById('testResults');
+      const timestamp = new Date().toLocaleTimeString();
+      results.innerHTML += `<div>[${timestamp}] ${message}</div>`;
+      results.scrollTop = results.scrollHeight;
+    }
+    
+    // Обновляем информацию после инициализации
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(updateDemoInfo, 100);
+    });
+  </script>
+</body>
+</html>

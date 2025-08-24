@@ -2,13 +2,85 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Redirecting...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/translations.js"></script>
   <script src="js/lang.js"></script>
-  <script>
-    redirectToPreferredLang();
-  </script>
+  <title data-i18n="pageTitle">Robaya - Mobile Games & Apps</title>
 </head>
 <body>
-  Redirecting...
+  <div class="lang-switch">
+      <a href="#" data-lang="en">🇺🇸 EN</a>
+      <a href="#" data-lang="ru">🇷🇺 RU</a>
+  </div>
+
+  <div class="container">
+    <header class="hero">
+      <h1 data-i18n="mainTitle">Welcome to Robaya</h1>
+      <p class="hero-subtitle" data-i18n="mainSubtitle">Discover amazing mobile games and applications</p>
+    </header>
+
+    <section class="games-section">
+      <h2 data-i18n="gamesTitle">Our Games & Apps</h2>
+      <p class="section-subtitle" data-i18n="gamesSubtitle">Choose from our collection of entertaining and useful applications</p>
+      
+      <div class="games-grid">
+        <!-- Sudoku Game -->
+        <div class="game-card clickable">
+          <a href="games/sudoku/" class="game-link">
+            <div class="game-icon">🧩</div>
+            <h3 data-i18n="sudokuTitle">Sudoku</h3>
+            <p data-i18n="sudokuDescription">Brain training puzzle game with multiple difficulty levels</p>
+            <div class="game-features">
+              <span data-i18n="sudokuFeatures">Features: Multiple levels, Daily challenges, Progress tracking</span>
+            </div>
+            <div class="game-actions">
+              <a href="https://apps.apple.com/app/id6751447827" class="download-btn" target="_blank" rel="noopener">
+                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store" height="40">
+              </a>
+              <span class="view-details" data-i18n="viewDetails">View Details →</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Hwatu Game -->
+        <div class="game-card clickable">
+          <a href="games/hwatu/" class="game-link">
+            <div class="game-icon">🎴</div>
+            <h3 data-i18n="hwatuTitle">Hwatu</h3>
+            <p data-i18n="hwatuDescription">Classic Korean card game with traditional designs</p>
+            <div class="game-features">
+              <span data-i18n="hwatuFeatures">Features: Traditional cards, Multiple modes, Cultural experience</span>
+            </div>
+            <div class="game-actions">
+              <a href="https://apps.apple.com/app/id6563145829" class="download-btn" target="_blank" rel="noopener">
+                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store" height="40">
+              </a>
+              <span class="view-details" data-i18n="viewDetails">View Details →</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- Board Game Assistant -->
+        <div class="game-card coming-soon clickable">
+          <a href="games/board-game-assistant/" class="game-link">
+            <div class="game-icon">🎲</div>
+            <div class="coming-soon-badge" data-i18n="comingSoonTitle">Coming Soon</div>
+            <h3 data-i18n="boardGameAssistantTitle">Board Game Assistant</h3>
+            <p data-i18n="boardGameAssistantDescription">Your digital companion for tabletop gaming</p>
+            <div class="game-actions">
+              <span class="view-details" data-i18n="viewDetails">View Details →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <a href="privacy.html" data-i18n="privacy">Privacy Policy</a>
+      <a href="terms.html" data-i18n="terms">Terms of Use</a>
+      <a href="mailto:rtat.store@gmail.com" data-i18n="email">rtat.store@gmail.com</a>
+    </footer>
+  </div>
 </body>
 </html>
