@@ -365,7 +365,6 @@ footer a:hover {
 /* Game page specific styles */
 .game-hero {
   margin-bottom: 4rem;
-  padding: 3rem 0;
   text-align: center;
 }
 
@@ -396,7 +395,6 @@ footer a:hover {
 .game-subtitle {
   font-size: 1.5rem;
   color: #6c757d;
-  margin-bottom: 2rem;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -404,7 +402,7 @@ footer a:hover {
 
 .download-btn-large {
   display: inline-block;
-  margin: 2rem 0;
+  /* margin: 2rem 0; */
   transition: transform 0.2s;
 }
 

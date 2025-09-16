@@ -2,8 +2,8 @@
 window.sudokuTranslations = {
   en: {
     // Game page
-    sudokuPageTitle: "Sudoku - Brain Training Game | Robaya",
-    sudokuTitle: "Sudoku",
+    sudokuPageTitle: "Sudoku Logic Quest",
+    sudokuTitle: "Sudoku Logic Quest",
     sudokuSubtitle: "The ultimate brain training puzzle game",
     sudokuDescriptionTitle: "About Sudoku",
     sudokuDescription: "Challenge your mind with Sudoku, the ultimate brain training puzzle game! Fill in the 9x9 grid with numbers 1-9 so that each row, column, and 3x3 box contains every digit exactly once.",
@@ -29,8 +29,12 @@ window.sudokuTranslations = {
     sudokuBenefit5: "Offers endless hours of engaging entertainment",
     sudokuScreenshotsTitle: "Game Screenshots",
     
+    downloadTitle: "Download Now",
+    downloadDesc: "Sudoku is now available! Download and play your favorite game anytime!",
+    downloadAppStore: "Download on App Store",
+
     // Privacy Policy
-    sudokuPrivacyTitle: "Privacy Policy - Sudoku | Robaya",
+    sudokuPrivacyTitle: "Privacy Policy - Sudoku Logic Quest",
     privacyTitle: "Privacy Policy",
     privacyLastUpdated: "Last updated: December 2024",
     privacyIntro: "This Privacy Policy describes how we collect, use, and protect your information when you use our Sudoku mobile application.",
@@ -44,7 +48,7 @@ window.sudokuTranslations = {
     privacyContactText: "If you have questions about this Privacy Policy, please contact us at:",
     
     // Terms of Use
-    sudokuTermsTitle: "Terms of Use - Sudoku | Robaya",
+    sudokuTermsTitle: "Terms of Use - Sudoku Logic Quest",
     termsTitle: "Terms of Use",
     termsLastUpdated: "Last updated: December 2024",
     termsIntro: "By using our Sudoku mobile application, you agree to these Terms of Use.",
@@ -70,8 +74,8 @@ window.sudokuTranslations = {
   
   ru: {
     // Game page
-    sudokuPageTitle: "Судоку - Игра для тренировки мозга | Robaya",
-    sudokuTitle: "Судоку",
+    sudokuPageTitle: "Судоку Логическая Головоломка",
+    sudokuTitle: "Судоку Логическая Головоломка",
     sudokuSubtitle: "Лучшая игра-головоломка для тренировки мозга",
     sudokuDescriptionTitle: "О Судоку",
     sudokuDescription: "Бросьте вызов своему разуму с игрой Судоку - лучшей головоломкой для тренировки мозга! Заполните сетку 9x9 числами от 1 до 9 так, чтобы каждая строка, столбец и квадрат 3x3 содержали каждую цифру ровно один раз.",
@@ -97,8 +101,12 @@ window.sudokuTranslations = {
     sudokuBenefit5: "Предоставляет бесконечные часы увлекательного развлечения",
     sudokuScreenshotsTitle: "Скриншоты игры",
     
+    downloadTitle: "Скачать сейчас",
+    downloadDesc: "Судоку уже доступно! Скачайте и играйте Вашу любимую игру в любое время!",
+    downloadAppStore: "Скачать в App Store",
+
     // Privacy Policy
-    sudokuPrivacyTitle: "Политика конфиденциальности - Судоку | Robaya",
+    sudokuPrivacyTitle: "Политика конфиденциальности - Судоку Логическая Головоломка",
     privacyTitle: "Политика конфиденциальности",
     privacyLastUpdated: "Последнее обновление: Декабрь 2024",
     privacyIntro: "Эта Политика конфиденциальности описывает, как мы собираем, используем и защищаем вашу информацию при использовании нашего мобильного приложения Судоку.",
@@ -112,7 +120,7 @@ window.sudokuTranslations = {
     privacyContactText: "Если у вас есть вопросы об этой Политике конфиденциальности, пожалуйста, свяжитесь с нами:",
     
     // Terms of Use
-    sudokuTermsTitle: "Лицензионное соглашение - Судоку | Robaya",
+    sudokuTermsTitle: "Лицензионное соглашение - Судоку Логическая Головоломка",
     termsTitle: "Лицензионное соглашение (EULA)",
     termsLastUpdated: "Последнее обновление: Декабрь 2024",
     termsIntro: "Используя наше мобильное приложение Судоку, вы соглашаетесь с этими Условиями использования.",

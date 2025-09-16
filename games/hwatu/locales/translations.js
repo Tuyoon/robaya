@@ -29,6 +29,10 @@ window.hwatuTranslations = {
     hwatuBenefit5: "Quick games perfect for short breaks",
     hwatuScreenshotsTitle: "Game Screenshots",
     
+    downloadTitle: "Download Now",
+    downloadDesc: "Hwatu is now available! Download and play your favorite game anytime!",
+    downloadAppStore: "Download on App Store",
+
     // Privacy Policy
     hwatuPrivacyTitle: "Privacy Policy - Hwatu",
     privacyTitle: "Privacy Policy",
@@ -155,6 +159,10 @@ window.hwatuTranslations = {
     hwatuBenefit5: "Быстрые игры, идеальные для коротких перерывов",
     hwatuScreenshotsTitle: "Скриншоты игры",
     
+    downloadTitle: "Скачать сейчас",
+    downloadDesc: "Хато уже доступно! Скачайте и играйте Вашу любимую игру в любое время!",
+    downloadAppStore: "Скачать в App Store",
+
     // Privacy Policy
     hwatuPrivacyTitle: "Политика конфиденциальности - Хато",
     privacyTitle: "Политика конфиденциальности",
