@@ -2,8 +2,8 @@
 window.translations = {
   en: {
     // Main page
-    pageTitle: "Robaya - Mobile Games & Apps",
-    mainTitle: "Welcome to Robaya",
+    pageTitle: "Mobile Games & Apps",
+    mainTitle: "Welcome",
     mainSubtitle: "Discover amazing mobile games and applications",
     gamesTitle: "Our Games & Apps",
     gamesSubtitle: "Choose from our collection of entertaining and useful applications",
@@ -22,7 +22,7 @@ window.translations = {
     // Board Game Assistant
     boardGameAssistantTitle: "Board Game Assistant",
     boardGameAssistantDescription: "Your digital companion for tabletop gaming",
-    boardGameAssistantFeatures: "Features: Game rules, Score tracking, Timer",
+    boardGameAssistantFeatures: "Features: Team creation, Score tracking, Randomizer, Coin flip, Dice roll, Game mode with history, Timer, Calculator and etc.",
     
     // Coming Soon
     comingSoonTitle: "Coming Soon",
@@ -37,8 +37,8 @@ window.translations = {
   
   ru: {
     // Main page
-    pageTitle: "Robaya - Мобильные игры и приложения",
-    mainTitle: "Добро пожаловать в Robaya",
+    pageTitle: "Мобильные игры и приложения",
+    mainTitle: "Добро пожаловать",
     mainSubtitle: "Откройте для себя удивительные мобильные игры и приложения",
     gamesTitle: "Наши игры и приложения",
     gamesSubtitle: "Выберите из нашей коллекции развлекательных и полезных приложений",
@@ -57,7 +57,7 @@ window.translations = {
     // Board Game Assistant
     boardGameAssistantTitle: "Ассистент настольных игр",
     boardGameAssistantDescription: "Ваш цифровой помощник для настольных игр",
-    boardGameAssistantFeatures: "Особенности: Правила игр, Подсчет очков, Таймер",
+    boardGameAssistantFeatures: "Особенности: Создание команд, Подсчет очков, Рандомайзер, Бросок монетки, Бросок кубиков, Режим игры с историей, Таймер, Калькулятор и др.",
     
     // Coming Soon
     comingSoonTitle: "Скоро",

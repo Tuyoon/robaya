@@ -112,7 +112,7 @@ robaya-site/
 ### HTML разметка с data-атрибутами
 
 ```html
-<h1 data-i18n="mainTitle">Welcome to Robaya</h1>
+<h1 data-i18n="mainTitle">Welcome</h1>
 <p data-i18n="mainSubtitle">Discover amazing mobile games and applications</p>
 ```
 
