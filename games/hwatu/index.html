@@ -8,6 +8,7 @@
   <script src="../../js/lang.js"></script>
   <script src="../../js/theme.js"></script>
   <script src="../../js/cookie-consent.js"></script>
+  <script src="../../js/screenshot-gallery.js"></script>
   <title data-i18n="hwatuPageTitle">Hwatu — Korean Card Game</title>
 </head>
 <body>
@@ -101,19 +102,21 @@
       </div>
     </section>
 
+    <!-- Video Preview Section -->
+    <section class="game-video">
+      <h2 data-i18n="hwatuVideoTitle">Watch Hwatu in Action</h2>
+      <div class="video-container">
+        <video id="hwatuVideo" controls poster="screenshots/0x0ss.png">
+          <source src="https://apptrailers.itunes.apple.com/itunes-assets/PurpleVideo221/v4/dc/fd/9b/dcfd9b67-c9ad-aeb1-a5f7-8136a778448c/P1127925025_default.m3u8" type="application/x-mpegURL">
+          <p data-i18n="videoNotSupported">Your browser does not support the video tag.</p>
+        </video>
+      </div>
+    </section>
+
+    <!-- Screenshots Section -->
     <section class="game-screenshots">
       <h2 data-i18n="hwatuScreenshotsTitle">Game Screenshots</h2>
-      <div class="screenshots-grid">
-        <div class="screenshot-placeholder">
-          <div class="placeholder-text">🃏 Game Screenshot 1</div>
-        </div>
-        <div class="screenshot-placeholder">
-          <div class="placeholder-text">🃏 Game Screenshot 2</div>
-        </div>
-        <div class="screenshot-placeholder">
-          <div class="placeholder-text">🃏 Game Screenshot 3</div>
-        </div>
-      </div>
+      <div class="screenshots-grid" data-gallery="screenshots/" data-pattern="0x0ss" data-count="9"></div>
     </section>
 
     <section class="download-section">
@@ -133,5 +136,153 @@
       </div>
     </footer>
   </div>
+
+  <script>
+    // HLS Video Support
+    
+    let currentImageIndex = 0;
+    const imagesArray = Array.from(screenshotItems);
+
+    // Set total count
+    lightboxTotal.textContent = imagesArray.length;
+
+    screenshotItems.forEach((img, index) => {
+      img.addEventListener('click', (e) => {
+        currentImageIndex = index;
+        updateLightbox();
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function updateLightbox() {
+      lightboxImg.src = imagesArray[currentImageIndex].src;
+      lightboxCurrent.textContent = currentImageIndex + 1;
+    }
+
+    function showNextImage() {
+      currentImageIndex = (currentImageIndex + 1) % imagesArray.length;
+      updateLightbox();
+    }
+
+    function showPrevImage() {
+      currentImageIndex = (currentImageIndex - 1 + imagesArray.length) % imagesArray.length;
+      updateLightbox();
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightboxPrev.addEventListener('click', (e) => {
+      e.stopPropagation();
+      showPrevImage();
+    });
+    lightboxNext.addEventListener('click', (e) => {
+      e.stopPropagation();
+      showNextImage();
+    });
+    
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      
+      if (e.key === 'Escape') {
+        closeLightbox();
+      } else if (e.key === 'ArrowLeft') {
+        showPrevImage();
+      } else if (e.key === 'ArrowRight') {
+        showNextImage();
+      }
+    });
+
+    // Screenshot Carousel
+    const carousel = document.querySelector('.screenshots-carousel');
+    const carouselPrev = document.getElementById('carouselPrev');
+    const carouselNext = document.getElementById('carouselNext');
+    
+    if (carousel && carouselPrev && carouselNext) {
+      let currentIndex = 0;
+      const scrollAmount = 300;
+      
+      function updateCarouselButtons() {
+        carouselPrev.disabled = false;
+        carouselNext.disabled = false;
+      }
+      
+      function scrollCarousel(direction) {
+        const itemWidth = carousel.querySelector('.screenshot-item').offsetWidth + 16; // width + gap
+        currentIndex += direction;
+        
+        // Smooth scroll to position
+        carousel.scrollTo({
+          left: currentIndex * itemWidth,
+          behavior: 'smooth'
+        });
+        
+        updateCarouselButtons();
+      }
+      
+      carouselPrev.addEventListener('click', () => scrollCarousel(-1));
+      carouselNext.addEventListener('click', () => scrollCarousel(1));
+      
+      // Scroll with touch/mouse drag
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+      
+      carousel.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+      });
+      
+      carousel.addEventListener('mouseleave', () => {
+        isDown = false;
+      });
+      
+      carousel.addEventListener('mouseup', () => {
+        isDown = false;
+      });
+      
+      carousel.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - carousel.offsetLeft;
+        const walk = (x - startX) * 2;
+        carousel.scrollLeft = scrollLeft - walk;
+      });
+    }
+
+    // HLS Video Support
+    if (document.getElementById('hwatuVideo')) {
+      const video = document.getElementById('hwatuVideo');
+      if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        // Native HLS support (Safari)
+        console.log('✅ Native HLS support detected');
+      } else {
+        // Load hls.js for other browsers
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/hls.js@latest';
+        script.onload = function() {
+          if (Hls.isSupported()) {
+            const hls = new Hls();
+            hls.loadSource(video.querySelector('source').src);
+            hls.attachMedia(video);
+            console.log('✅ HLS.js loaded and attached');
+          }
+        };
+        document.head.appendChild(script);
+      }
+    }
+  </script>
 </body>
 </html>

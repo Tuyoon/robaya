@@ -601,10 +601,97 @@ footer a:hover {
 }
 
 .screenshots-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  position: relative;
+  overflow: visible;
   margin-top: 2rem;
+  padding: 0 60px;
+}
+
+.screenshots-grid::before,
+.screenshots-grid::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.screenshots-grid::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg), transparent);
+}
+
+.screenshots-grid::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg), transparent);
+}
+
+.screenshots-carousel {
+  display: flex;
+  gap: 1rem;
+  transition: transform 0.3s ease;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  -ms-overflow-style: none;
+}
+
+.screenshots-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.screenshots-carousel > * {
+  flex: 0 0 auto;
+}
+
+/* Carousel Arrows */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--card-bg);
+  color: var(--text);
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-arrow:hover {
+  background: var(--lang-hover);
+  border-color: var(--border-hover);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-arrow:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-arrow-prev {
+  left: -24px;
+}
+
+.carousel-arrow-next {
+  right: -24px;
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
 
 .screenshot-placeholder {
@@ -881,11 +968,14 @@ footer a:hover {
   
   .games-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 2rem;
+    row-gap: 2rem;
   }
   
   .game-card {
     padding: 1.5rem;
+    height: auto;
+    position: static;
   }
   
   .lang-switch {
@@ -1202,4 +1292,242 @@ li {
     left: 10px;
     max-width: none;
   }
+
+  /* Mobile Screenshot Gallery */
+  .screenshots-grid {
+    gap: 1rem;
+    padding: 0 50px;
+  }
+  
+  .screenshots-grid::before,
+  .screenshots-grid::after {
+    width: 50px;
+  }
+  
+  .screenshot-item {
+    width: auto;
+  }
+  
+  .carousel-controls {
+    margin-top: 1rem;
+  }
+  
+  .carousel-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  /* Mobile Carousel Arrows */
+  .carousel-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 1.5rem;
+  }
+  
+  .carousel-arrow-prev {
+    left: 5px;
+  }
+  
+  .carousel-arrow-next {
+    right: 5px;
+  }
+
+  /* Mobile Video */
+  .video-container {
+    margin: 0 1rem;
+    border-radius: 12px;
+  }
+
+  .game-video h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Mobile Lightbox */
+  .lightbox-nav {
+    width: 50px;
+    height: 50px;
+    font-size: 2.5rem;
+  }
+
+  #lightbox-prev {
+    left: 10px;
+  }
+
+  #lightbox-next {
+    right: 10px;
+  }
+
+  #lightbox img {
+    max-width: 95vw;
+    max-height: 75vh;
+  }
+
+  .lightbox-counter {
+    font-size: 1rem;
+  }
+
+  .screenshot-item img {
+    height: 180px;
+    object-fit: contain;
+  }
+  
+  .screenshot-item:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* Screenshot Gallery Styles */
+.screenshot-item {
+  width: auto;
+  background: transparent;
+  border-radius: 12px;
+  overflow: visible;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.screenshot-item:hover {
+  transform: translateY(-3px);
+}
+
+.screenshot-item img {
+  width: auto;
+  height: 250px;
+  display: block;
+  transition: transform 0.3s ease;
+  object-fit: contain;
+}
+
+.screenshot-item:hover img {
+  transform: scale(1.02);
+}
+
+/* Video Section Styles */
+.game-video {
+  margin-bottom: 4rem;
+}
+
+.game-video h2 {
+  font-size: 2rem;
+  color: var(--text);
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.video-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--card-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+}
+
+.video-container video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Lightbox Styles */
+#lightbox {
+  display: none;
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+#lightbox.active {
+  display: flex;
+}
+
+.lightbox-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+#lightbox img {
+  max-width: 90vw;
+  max-height: 80vh;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-counter {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  font-size: 3rem;
+  font-weight: bold;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.lightbox-nav:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: translateY(-50%) scale(1.1);
+}
+
+#lightbox-prev {
+  left: 20px;
+}
+
+#lightbox-next {
+  right: 20px;
+}
+
+#lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.5);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+#lightbox-close:hover {
+  background: rgba(0, 0, 0, 0.8);
+  transform: scale(1.1);
 }

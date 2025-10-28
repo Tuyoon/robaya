@@ -70,7 +70,7 @@ class CookieConsentManager {
         <div class="cookie-consent-buttons">
           <button class="cookie-btn cookie-btn-accept" data-i18n="cookieAccept">Accept All</button>
           <button class="cookie-btn cookie-btn-reject" data-i18n="cookieReject">Reject All</button>
-          <a href="${privacyPath}" class="cookie-btn cookie-btn-info" data-i18n="cookieLearnMore">Learn More</a>
+          <button class="cookie-btn cookie-btn-info" data-i18n="cookieLearnMore" data-privacy-path="${privacyPath}">Learn More</button>
         </div>
       </div>
     `;
@@ -110,6 +110,7 @@ class CookieConsentManager {
   setupEventListeners() {
     const acceptBtn = document.querySelector('.cookie-btn-accept');
     const rejectBtn = document.querySelector('.cookie-btn-reject');
+    const infoBtn = document.querySelector('.cookie-btn-info');
 
     if (acceptBtn) {
       acceptBtn.addEventListener('click', () => this.acceptCookies());
@@ -117,6 +118,13 @@ class CookieConsentManager {
 
     if (rejectBtn) {
       rejectBtn.addEventListener('click', () => this.rejectCookies());
+    }
+
+    if (infoBtn) {
+      infoBtn.addEventListener('click', () => {
+        const privacyPath = infoBtn.getAttribute('data-privacy-path');
+        window.location.href = privacyPath;
+      });
     }
 
     console.log('🔧 Cookie consent event listeners setup complete');

@@ -28,6 +28,8 @@ window.hwatuTranslations = {
     hwatuBenefit4: "Great for social gaming with friends and family",
     hwatuBenefit5: "Quick games perfect for short breaks",
     hwatuScreenshotsTitle: "Game Screenshots",
+    hwatuVideoTitle: "Watch Hwatu in Action",
+    videoNotSupported: "Your browser does not support the video tag.",
     
     downloadTitle: "Download Now",
     downloadDesc: "Hwatu is now available! Download and play your favorite game anytime!",
@@ -157,6 +159,8 @@ window.hwatuTranslations = {
     hwatuBenefit4: "Отлично подходит для социальных игр с друзьями и семьей",
     hwatuBenefit5: "Быстрые игры, идеальные для коротких перерывов",
     hwatuScreenshotsTitle: "Скриншоты игры",
+    hwatuVideoTitle: "Смотрите Хато в действии",
+    videoNotSupported: "Ваш браузер не поддерживает видео.",
     
     downloadTitle: "Скачать сейчас",
     downloadDesc: "Хато уже доступно! Скачайте и играйте Вашу любимую игру в любое время!",
