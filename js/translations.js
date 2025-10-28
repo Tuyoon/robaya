@@ -32,7 +32,16 @@ window.translations = {
     privacy: "Privacy Policy",
     terms: "Terms of Use",
     email: "rtat.store@gmail.com",
-    home: "Home"
+    home: "Home",
+    
+    // Cookie consent
+    cookieTitle: "We use cookies",
+    cookieDescription: "This website uses cookies to improve your experience. By clicking 'Accept All', you agree to our use of cookies.",
+    cookieAccept: "Accept All",
+    cookieReject: "Reject All",
+    cookieLearnMore: "Learn More",
+    cookieAcceptedMessage: "✓ Cookie preferences saved!",
+    cookieRejectedMessage: "✓ Cookie preferences saved!"
   },
   
   ru: {
@@ -67,7 +76,16 @@ window.translations = {
     privacy: "Политика конфиденциальности",
     terms: "Условия использования",
     email: "rtat.store@gmail.com",
-    home: "Главная"
+    home: "Главная",
+    
+    // Cookie consent
+    cookieTitle: "Мы используем cookies",
+    cookieDescription: "Этот сайт использует cookies для улучшения вашего опыта. Нажав 'Принять все', вы соглашаетесь с использованием cookies.",
+    cookieAccept: "Принять все",
+    cookieReject: "Отклонить все",
+    cookieLearnMore: "Узнать больше",
+    cookieAcceptedMessage: "✓ Настройки cookies сохранены!",
+    cookieRejectedMessage: "✓ Настройки cookies сохранены!"
   }
 };
 

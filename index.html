@@ -7,6 +7,7 @@
   <script src="js/translations.js"></script>
   <script src="js/lang.js"></script>
   <script src="js/theme.js"></script>
+  <script src="js/cookie-consent.js"></script>
   <title data-i18n="pageTitle">Robaya - Mobile Games & Apps</title>
 </head>
 <body>
@@ -27,57 +28,48 @@
       
       <div class="games-grid">
         <!-- Sudoku Game -->
-        <div class="game-card clickable">
-          <a href="games/sudoku/" class="game-link">
-            <div class="game-icon">🧩</div>
-            <h3 data-i18n="sudokuTitle">Sudoku Logic Quest</h3>
-            <p data-i18n="sudokuDescription">Brain training puzzle game with multiple difficulty levels</p>
-            <div class="game-features">
-              <span data-i18n="sudokuFeatures">Features: Multiple levels, Daily challenges, Progress tracking</span>
-            </div>
-            <div class="game-actions">
-              <a href="https://apps.apple.com/app/id6751447827" class="download-btn" target="_blank" rel="noopener">
-                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store" height="40">
-              </a>
-              <span class="view-details" data-i18n="viewDetails">View Details →</span>
-            </div>
-          </a>
+        <div class="game-card clickable" onclick="window.location.href='games/sudoku/'" style="cursor: pointer;">
+          <img src="games/sudoku/AppIcon.png" alt="Sudoku App Icon" class="game-icon">
+          <h3 data-i18n="sudokuTitle">Sudoku Logic Quest</h3>
+          <p data-i18n="sudokuDescription">Brain training puzzle game with multiple difficulty levels</p>
+          <div class="game-features">
+            <span data-i18n="sudokuFeatures">Features: Multiple levels, Daily challenges, Progress tracking</span>
+          </div>
+          <div class="game-actions">
+            <a href="https://apps.apple.com/app/id6751447827" class="download-btn" target="_blank" rel="noopener" onclick="event.stopPropagation(); return true;">
+              <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store" height="40">
+            </a>
+          </div>
         </div>
 
         <!-- Hwatu Game -->
-        <div class="game-card clickable">
-          <a href="games/hwatu/" class="game-link">
-            <div class="game-icon">🎴</div>
-            <h3 data-i18n="hwatuTitle">Hwatu</h3>
-            <p data-i18n="hwatuDescription">Classic Korean card game with traditional designs</p>
-            <div class="game-features">
-              <span data-i18n="hwatuFeatures">Features: Traditional cards, Multiple modes, Cultural experience</span>
-            </div>
-            <div class="game-actions">
-              <a href="https://apps.apple.com/app/id6563145829" class="download-btn" target="_blank" rel="noopener">
-                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store" height="40">
-              </a>
-              <span class="view-details" data-i18n="viewDetails">View Details →</span>
-            </div>
-          </a>
+        <div class="game-card clickable" onclick="window.location.href='games/hwatu/'" style="cursor: pointer;">
+          <img src="games/hwatu/AppIcon.png" alt="Hwatu App Icon" class="game-icon">
+          <h3 data-i18n="hwatuTitle">Hwatu</h3>
+          <p data-i18n="hwatuDescription">Classic Korean card game with traditional designs</p>
+          <div class="game-features">
+            <span data-i18n="hwatuFeatures">Features: Traditional cards, Multiple modes, Cultural experience</span>
+          </div>
+          <div class="game-actions">
+            <a href="https://apps.apple.com/app/id6563145829" class="download-btn" target="_blank" rel="noopener" onclick="event.stopPropagation(); return true;">
+              <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store" height="40">
+            </a>
+          </div>
         </div>
 
         <!-- Board Games Assistant -->
-        <div class="game-card clickable">
-          <a href="games/board-game-assistant/" class="game-link">
-            <div class="game-icon">🎲</div>
-            <h3 data-i18n=boardGamesAssistantTitle">Board Games Assistant</h3>
-            <p data-i18n=boardGamesAssistantDescription">Your digital companion for tabletop gaming</p>
-            <div class="game-features">
-              <span data-i18n=boardGamesAssistantFeatures">Features: Team creation, Score tracking, Timer, Calculator, Randomizer</span>
-            </div>
-            <div class="game-actions">
-              <a href="https://apps.apple.com/app/id6749201921" class="download-btn" target="_blank" rel="noopener">
-                <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store" height="40">
-              </a>
-              <span class="view-details" data-i18n="viewDetails">View Details →</span>
-            </div>
-          </a>
+        <div class="game-card clickable" onclick="window.location.href='games/board-game-assistant/'" style="cursor: pointer;">
+          <img src="games/board-game-assistant/AppIcon.png" alt="Board Games Assistant App Icon" class="game-icon">
+          <h3 data-i18n="boardGamesAssistantTitle">Board Games Assistant</h3>
+          <p data-i18n="boardGamesAssistantDescription">Your digital companion for tabletop gaming</p>
+          <div class="game-features">
+            <span data-i18n="boardGamesAssistantFeatures">Features: Team creation, Score tracking, Timer, Calculator, Randomizer</span>
+          </div>
+          <div class="game-actions">
+            <a href="https://apps.apple.com/app/id6749201921" class="download-btn" target="_blank" rel="noopener" onclick="event.stopPropagation(); return true;">
+              <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store" height="40">
+            </a>
+          </div>
         </div>
       </div>
     </section>

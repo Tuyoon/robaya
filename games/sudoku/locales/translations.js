@@ -65,7 +65,6 @@ window.sudokuTranslations = {
     
     // Navigation
     home: "Home",
-    backToHome: "← Back to Home",
     backToGame: "← Back to Sudoku",
     privacy: "Privacy Policy",
     terms: "Terms of Use",
@@ -137,7 +136,6 @@ window.sudokuTranslations = {
     
     // Navigation
     home: "Главная",
-    backToHome: "← Назад на главную",
     backToGame: "← Назад к Судоку",
     privacy: "Политика конфиденциальности",
     terms: "Лицензионное соглашение (EULA)",

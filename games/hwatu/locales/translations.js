@@ -123,7 +123,6 @@ window.hwatuTranslations = {
     
     // Navigation
     home: "Home",
-    backToHome: "← Back to Home",
     backToGame: "← Back to Hwatu",
     privacy: "Privacy Policy",
     terms: "Terms of Use",
@@ -253,7 +252,6 @@ window.hwatuTranslations = {
     
     // Navigation
     home: "Главная",
-    backToHome: "← Назад на главную",
     backToGame: "← Назад к Хато",
     privacy: "Политика конфиденциальности",
     terms: "Лицензионное соглашение (EULA)",

@@ -27,6 +27,10 @@
   --footer-link-hover: #0056b3;
   --feature-bg: #f8f9fa;
   --feature-text: #495057;
+  --cookie-bg: #ffffff;
+  --cookie-border: #e0e0e0;
+  --cookie-text: #1a1a1a;
+  --cookie-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
 }
 
 [data-theme="dark"] {
@@ -58,6 +62,10 @@
   --footer-link-hover: #6bb3ff;
   --feature-bg: #21262d;
   --feature-text: #e6edf3;
+  --cookie-bg: #161b22;
+  --cookie-border: #30363d;
+  --cookie-text: #ffffff;
+  --cookie-shadow: 0 -4px 12px rgba(0, 0, 0, 0.5);
 }
 
 body {
@@ -174,7 +182,6 @@ body {
 /* Hero section */
 .hero {
   margin-bottom: 4rem;
-  padding: 3rem 0;
 }
 
 .hero h1 {
@@ -221,18 +228,22 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 /* Game cards */
 .game-card {
   background: var(--card-bg);
   border-radius: 16px;
-  padding: 2rem;
+  padding: 1.5rem;
   box-shadow: var(--card-shadow);
   transition: all 0.3s ease;
   position: relative;
   text-align: center;
   border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .game-card:hover {
@@ -263,10 +274,26 @@ body {
   display: block;
 }
 
+a.game-link.game-card {
+  text-decoration: none;
+  color: inherit;
+}
+
 .game-icon {
   font-size: 4rem;
-  margin-bottom: 1rem;
+  margin: 0 auto 1rem auto;
   display: block;
+  text-align: center;
+}
+
+.game-icon img,
+img.game-icon {
+  display: block;
+  width: 128px;
+  height: 128px;
+  margin: 0 auto;
+  border-radius: 20px;
+  object-fit: cover;
 }
 
 .game-card h3 {
@@ -305,6 +332,8 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  margin-top: auto;
+  padding-top: 1rem;
 }
 
 .view-details {
@@ -342,7 +371,7 @@ body {
 
 /* Footer */
 footer {
-  margin-top: 4rem;
+  margin-top: 6rem;
   padding-top: 2rem;
   border-top: 1px solid var(--border-color);
   text-align: center;
@@ -374,8 +403,17 @@ footer a:hover {
 
 .game-icon-large {
   font-size: 6rem;
-  margin-bottom: 2rem;
+  margin: 0 auto 2rem auto;
   display: block;
+  text-align: center;
+}
+
+.game-icon-large img {
+  display: inline-block;
+  width: 128px;
+  height: 128px;
+  margin: 0 auto;
+  border-radius: 20px;
 }
 
 .coming-soon-badge-large {
@@ -827,20 +865,6 @@ footer a:hover {
   text-decoration: underline;
 }
 
-.contact-info {
-  margin-top: 1rem;
-}
-
-.contact-info a {
-  color: var(--btn);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.contact-info a:hover {
-  text-decoration: underline;
-}
-
 /* Responsive design */
 @media (max-width: 768px) {
   body {
@@ -986,4 +1010,196 @@ li {
 
 .appstore-button:hover {
   transform: scale(1.05);
+}
+
+/* Cookie Consent Banner */
+#cookie-consent-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--cookie-bg) !important;
+  border-top: 2px solid var(--accent);
+  box-shadow: var(--cookie-shadow);
+  padding: 1.5rem 2rem;
+  z-index: 9999;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.cookie-consent-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  color: var(--cookie-text) !important;
+}
+
+.cookie-consent-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.cookie-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.cookie-text {
+  flex: 1;
+}
+
+.cookie-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--cookie-text) !important;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.4;
+  display: block;
+}
+
+.cookie-description {
+  font-size: 0.95rem;
+  color: var(--text-secondary) !important;
+  margin: 0;
+  line-height: 1.6;
+  display: block;
+}
+
+.cookie-consent-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.cookie-btn {
+  padding: 0.8rem 1.8rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  border: 2px solid transparent;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: inherit !important;
+}
+
+.cookie-btn-accept {
+  background: var(--btn);
+  color: white !important;
+  border: none;
+}
+
+.cookie-btn-accept:hover {
+  background: var(--footer-link-hover);
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.cookie-btn-reject {
+  background: transparent;
+  color: var(--cookie-text) !important;
+  border: 2px solid var(--cookie-border);
+}
+
+.cookie-btn-reject:hover {
+  background: var(--border-color);
+  border-color: var(--border-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cookie-btn-info {
+  background: transparent;
+  color: var(--btn) !important;
+  border: 2px solid var(--btn);
+}
+
+.cookie-btn-info:hover {
+  background: var(--btn);
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Cookie Toast Notification */
+.cookie-toast {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  background: var(--card-bg);
+  color: var(--text);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+  z-index: 10000;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  max-width: 300px;
+}
+
+/* Responsive Cookie Banner */
+@media (max-width: 768px) {
+  #cookie-consent-banner {
+    padding: 1.2rem 1rem;
+  }
+  
+  .cookie-consent-content {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  
+  .cookie-consent-message {
+    width: 100%;
+    gap: 1rem;
+  }
+  
+  .cookie-text {
+    width: 100%;
+  }
+  
+  .cookie-title {
+    font-size: 1.1rem;
+  }
+  
+  .cookie-description {
+    font-size: 0.9rem;
+  }
+  
+  .cookie-consent-buttons {
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .cookie-btn {
+    width: 100%;
+    text-align: center;
+    padding: 0.9rem 1.5rem;
+  }
+  
+  .cookie-toast {
+    bottom: 80px;
+    right: 10px;
+    left: 10px;
+    max-width: none;
+  }
 }

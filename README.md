@@ -233,7 +233,7 @@ mkdir games/new-game/locales
         <p data-i18n="newGameDescription">Description of the new game</p>
         
         <footer>
-            <a href="../../index.html" data-i18n="backToHome">← Back to Home</a>
+          <a href="mailto:rtat.store@gmail.com" data-i18n="email">rtat.store@gmail.com</a>
         </footer>
     </div>
 </body>
@@ -250,13 +250,11 @@ window.newGameTranslations = {
     newGameTitle: "New Game",
     newGameDescription: "Description of the new game",
     home: "Home",
-    backToHome: "← Back to Home"
   },
   ru: {
     newGameTitle: "Новая игра",
     newGameDescription: "Описание новой игры",
     home: "Главная",
-    backToHome: "← Назад на главную"
   }
 };
 ```
@@ -313,7 +311,7 @@ window.newGameTranslations = {
         <p data-i18n="newPageContent">This is a new page</p>
         
         <footer>
-            <a href="index.html" data-i18n="backToHome">← Back to Home</a>
+          <a href="mailto:rtat.store@gmail.com" data-i18n="email">rtat.store@gmail.com</a>
         </footer>
     </div>
 </body>

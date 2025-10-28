@@ -31,7 +31,6 @@ window['board-game-assistantTranslations'] = {
     
     // Navigation
     home: "Home",
-    backToHome: "← Back to Home",
     contactUs: "Contact Us",
     email: "rtat.store@gmail.com",
     privacyPolicy: "Privacy Policy",
@@ -123,7 +122,6 @@ window['board-game-assistantTranslations'] = {
     
     // Navigation
     home: "Главная",
-    backToHome: "← Назад на главную",
     contactUs: "Связаться с нами",
     email: "rtat.store@gmail.com",
     privacyPolicy: "Политика конфиденциальности",
