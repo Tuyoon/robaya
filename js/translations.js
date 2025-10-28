@@ -20,9 +20,9 @@ window.translations = {
     hwatuFeatures: "Features: Traditional cards, Multiple modes, Cultural experience",
     
     // Board Games Assistant
-    boardGameAssistantTitle: "Board Games Assistant",
-    boardGameAssistantDescription: "Your digital companion for tabletop gaming",
-    boardGameAssistantFeatures: "Features: Team creation, Score tracking, Randomizer, Coin flip, Dice roll, Game mode with history, Timer, Calculator and etc.",
+    boardGamesAssistantTitle: "Board Games Assistant",
+    boardGamesAssistantDescription: "Your digital companion for tabletop gaming",
+    boardGamesAssistantFeatures: "Features: Team creation, Score tracking, Randomizer, Coin flip, Dice roll, Game mode with history, Timer, Calculator and etc.",
     
     // Coming Soon
     comingSoonTitle: "Coming Soon",
@@ -64,9 +64,9 @@ window.translations = {
     hwatuFeatures: "Особенности: Традиционные карты, Несколько режимов, Культурный опыт",
     
     // Board Games Assistant
-    boardGameAssistantTitle: "Ассистент настольных игр",
-    boardGameAssistantDescription: "Ваш цифровой помощник для настольных игр",
-    boardGameAssistantFeatures: "Особенности: Создание команд, Подсчет очков, Рандомайзер, Бросок монетки, Бросок кубиков, Режим игры с историей, Таймер, Калькулятор и др.",
+    boardGamesAssistantTitle: "Ассистент настольных игр",
+    boardGamesAssistantDescription: "Ваш цифровой помощник для настольных игр",
+    boardGamesAssistantFeatures: "Особенности: Создание команд, Подсчет очков, Рандомайзер, Бросок монетки, Бросок кубиков, Режим игры с историей, Таймер, Калькулятор и др.",
     
     // Coming Soon
     comingSoonTitle: "Скоро",
